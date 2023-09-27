@@ -57,16 +57,6 @@ describe("Test Banco (Prueba BOTON DE NAVEGACION) - conjunto de pruebas",() => {
     });
 });
 
-describe("Test Banco (Prueba LOGIN/CAMPOS) - conjunto de pruebas",() => {    
-
-    it('Verifica el login/campos', () => {
-        cy.visit("http://zero.webappsecurity.com/")
-        cy.get('#signin_button').click()
-        cy.get('#user_login').type("username");
-        cy.get('#user_password').type("password");
-    });
-});
-
 describe("Test Banco (Prueba IMAGENES) - conjunto de pruebas",() => {    
 
     it('Verifica que funcionen las imagenes', () => {
@@ -80,5 +70,8 @@ describe("Test Banco (Prueba LOGIN/FORMULARIO) - conjunto de pruebas",() => {
 
     it('Verifica el login/formulario', () => {
         cy.visit("http://zero.webappsecurity.com/")
+        cy.get('#signin_button').click()
+        cy.get('#user_login') .type("username");
+        cy.get('#user_password') .type("password");
         
 })});
